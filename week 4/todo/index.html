@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo</title>
+  </head>
+  <script>
+    function add() {
+      const work = document.getElementById("work").value;
+      const desc = document.getElementById("desc").value;
+      document.getElementById("wadded").innerHTML = work;
+      document.getElementById("dadded").innerHTML = desc;
+      var x = document.createElement("BUTTON"); 
+      var t = document.createTextNode("Click me");
+      x.appendChild(t);
+      document.body.appendChild(x);
+    }
+  </script>
+  <body>
+    <input id="work" type="text" placeholder="work title" />
+    <input id="desc" type="text" placeholder="work description" />
+    <button onclick="add()" class="btn">Add work</button>
+    <div id="wadded"></div>
+    <div id="dadded"></div>
+  </body>
+</html>
