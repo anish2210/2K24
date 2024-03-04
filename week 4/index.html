@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<script>
+    function populate() {
+        const Principal = document.getElementById("p").value;
+        const Rate = document.getElementById("r").value;
+        const Time = document.getElementById("t").value;
+
+        const url = `https://sum-server.100xdevs.com/interest?principal=${Principal}&rate=${Rate}&time=${Time}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('total').innerHTML = `
+                    <p>Total Amount: ${data.total}</p>
+                    <p>Interest Amount: ${data.interest}</p>
+                `;
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>
+
+
+<body>
+
+    <input id="p" type="text" placeholder="Principal">
+    <br>
+    <input id="r" type="text" placeholder="Rate of interest">
+    <br>
+    <input id="t" type="text" placeholder="Time">
+    <br>
+    <button onclick="populate()">Calculate  Sum</button>
+
+    <div id="result"></div>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<script>
+    function populate() {
+        const Principal = document.getElementById("P").value;
+        const Rate = document.getElementById("r").value;
+        const Time = document.getElementById("t").value;
+
+        const url = `https://sum-server.100xdevs.com/interest?principal=${Principal}&rate=${Rate}&time=${Time}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = `
+                    <p>Total Amount: ${data.total}</p>
+                    <p>Interest Amount: ${data.interest}</p>
+                `;
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>
+
+
+<body>
+
+    <input id="P" type="text" placeholder="Principal">
+    <br>
+    <input id="r" type="text" placeholder="Rate of interest">
+    <br>
+    <input id="t" type="text" placeholder="Time">
+    <br>
+    <button onclick="populate()">Calculate  Sum</button>
+
+    <div id="result"></div>
+    
+</body>
+</html>
