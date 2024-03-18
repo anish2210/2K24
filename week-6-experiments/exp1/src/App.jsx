@@ -1,43 +1,28 @@
-import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState([{
-    id:1,
-    title:"go to the gym",
-    description:"must go"
-  }, {
-    id:2,
-    title:"go to the market",
-    description:"must go"
-  }, {
-    id:3,
-    title:"go to the school",
-    description:"must go"
-  }]);
+  return (
+    <div>
+      <CardWrapper>
+        <TextComponent/>
+        <TextComponent/>
+        <TextComponent/>
+      </CardWrapper>
+      <CardWrapper>
+        <TextComponent/>
+      </CardWrapper>
+    </div>
+  );
+}
+console.log("console2");
 
-     function newTodo(){
-       setCount([...count, {
-         id:"4",
-         title: Math.random(),
-         description: Math.random()
-       }])
-     
-      //  setCount(newTodo);
-     }
-
-  return <>
-    <button onClick={newTodo}>Add new todo</button>
-
-     {count.map(todo => <Todo key={todo.id} title={todo.title} description={todo.description}/>)}
-  </>
+function CardWrapper({ children }) {
+  console.log("console")
+  return <div style={{ border: "2px solid black", padding:20, margin:10 }}>{children}</div>
 }
 
-
-function Todo({title, description}){
-  return <div>
-    <h2>{title}</h2>
-    <h4>{description}</h4>
-  </div>
+function TextComponent() {
+  console.log("console1")
+  return <div>hi there</div>
 }
 
 export default App;
